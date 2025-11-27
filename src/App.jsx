@@ -24,11 +24,9 @@ function MemberCard({ name, role, img }) {
 export default function App() {
   const sarcasmText = `Хозяин сайта решил наконец показать миру «Золотую Молодёжь Киева» — и это настоящее зрелище! Здесь собраны те, кто будто родился, чтобы выглядеть эффектно на фото и громко заявлять о себе в социальных сетях. Каждый участник — отдельный проект самовлюблённости: кто-то мастерски умеет делать вид, что работает над важными инициативами, а на деле — виртуозно переключается между бесконечными селфи и лайками.`;
 
-  // Пример участников с фото (добавляй свои файлы в public/images)
+  // Добавляем участника Богдана
   const members = [
-    { name: 'Алексей', role: 'Лидер', img: '/images/alexey.jpg' },
-    { name: 'Мария', role: 'Активистка', img: '/images/maria.jpg' },
-    { name: 'Игорь', role: 'Организатор', img: '/images/igor.jpg' }
+    { name: 'Богдан', role: 'Участник', img: '/images/bogdan.jpg' } // помести файл bogdan.jpg в public/images
   ];
 
   return (
@@ -59,7 +57,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Members section с фото и анимацией */}
+      {/* Members section с Богданом */}
       <section className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
         {members.map(m => (
           <MemberCard key={m.name} {...m} />
@@ -70,7 +68,7 @@ export default function App() {
       <section id="contact" className="max-w-4xl mx-auto px-6 py-12">
         <div className="bg-gray-900 rounded-2xl shadow p-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-white"><Mail size={18}/> Напишите нам</h3>
-          <p className="text-gray-300 mt-2">Оставьте нам сообщение, если у вас есть информация про остальных участников, которых мы не добавили ещё.</p>
+          <p className="text-gray-300 mt-2">Оставьте нам сообщение, если у вас есть информация про участников, которых мы ещё не добавили.</p>
           <form className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <input className="col-span-1 md:col-span-2 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white" placeholder="Имя" />
             <input className="bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white" placeholder="Email" />
