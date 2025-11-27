@@ -1,8 +1,35 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+// Компонент карточки участника с фото и анимацией
+function MemberCard({ name, role, img }) {
+  return (
+    <motion.div
+      className="bg-gray-900 text-white rounded-xl shadow overflow-hidden hover:scale-105 transition-transform duration-300"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <img src={img} alt={name} className="w-full h-56 object-cover" />
+      <div className="p-4">
+        <h4 className="font-semibold mb-1">{name}</h4>
+        <p className="italic text-gray-400 mb-1">{role}</p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function App() {
   const sarcasmText = `Хозяин сайта решил наконец показать миру «Золотую Молодёжь Киева» — и это настоящее зрелище! Здесь собраны те, кто будто родился, чтобы выглядеть эффектно на фото и громко заявлять о себе в социальных сетях. Каждый участник — отдельный проект самовлюблённости: кто-то мастерски умеет делать вид, что работает над важными инициативами, а на деле — виртуозно переключается между бесконечными селфи и лайками.`;
+
+  // Пример участников с фото (добавляй свои файлы в public/images)
+  const members = [
+    { name: 'Алексей', role: 'Лидер', img: '/images/alexey.jpg' },
+    { name: 'Мария', role: 'Активистка', img: '/images/maria.jpg' },
+    { name: 'Игорь', role: 'Организатор', img: '/images/igor.jpg' }
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -30,6 +57,13 @@ export default function App() {
           <h1 className="text-4xl font-extrabold text-white">Золотая Молодежь Киева</h1>
           <p className="mt-3 text-gray-300 text-sm">Знакомьтесь с участниками проекта и их инициативами</p>
         </div>
+      </section>
+
+      {/* Members section с фото и анимацией */}
+      <section className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {members.map(m => (
+          <MemberCard key={m.name} {...m} />
+        ))}
       </section>
 
       {/* Contact / Form */}
