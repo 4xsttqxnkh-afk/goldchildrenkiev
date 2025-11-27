@@ -4,7 +4,7 @@ import { Mail } from 'lucide-react';
 // Компонент для отображения участника Золотой Молодежи Киева
 function MemberCard({ name, role, img, description }) {
   return (
-    <div className="bg-white rounded-xl shadow overflow-hidden">
+    <div className="bg-white rounded-xl shadow overflow-hidden hover:scale-105 transition-transform duration-300">
       <div className="h-56 bg-gray-200 bg-center bg-cover" style={{ backgroundImage: `url(${img})` }}></div>
       <div className="p-4 text-sm text-gray-700">
         <h4 className="font-semibold mb-1">{name}</h4>
@@ -22,6 +22,8 @@ export default function App() {
     { name: 'Игорь', role: 'Организатор', description: 'Отвечает за мероприятия и встречи.', img: 'https://via.placeholder.com/400x300?text=Igor' }
   ];
 
+  const sarcasmText = `Хозяин сайта решил наконец показать миру «Золотую Молодёжь Киева» — и это настоящее зрелище! Здесь собраны те, кто будто родился, чтобы выглядеть эффектно на фото и громко заявлять о себе в социальных сетях. Каждый участник — отдельный проект самовлюблённости: кто-то мастерски умеет делать вид, что работает над важными инициативами, а на деле — виртуозно переключается между бесконечными селфи и лайками. Вы увидите: Алексей — лидер по титулу, но мастер откладывать дела на потом. Мария — активистка с большой буквы, умеет выступать и говорить, а вот реальные действия иногда теряются в бесконечных сторис. Игорь — организатор мероприятий, который помнит всё, кроме того, где на самом деле проходят эти мероприятия. В общем, это галерея амбиций, самолюбия и ярких, но порой странных решений — настоящая «Золотая Молодёжь», которой, кажется, важнее блеск, чем смысл.`;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 text-gray-800">
       {/* Header */}
@@ -32,9 +34,16 @@ export default function App() {
         </div>
       </header>
 
+      {/* Sarcasm intro */}
+      <section className="max-w-4xl mx-auto px-6 py-10 bg-yellow-50 border-l-4 border-yellow-400 rounded-xl shadow-md">
+        <p className="text-gray-800 text-lg leading-relaxed whitespace-pre-line">
+          {sarcasmText}
+        </p>
+      </section>
+
       {/* Hero */}
       <section
-        className="w-full h-[70vh] bg-cover bg-center flex items-end justify-start p-10"
+        className="w-full h-[50vh] bg-cover bg-center flex items-end justify-start p-10 mt-6"
         style={{ backgroundImage: "url('https://via.placeholder.com/1600x900?text=Golden+Youth+Kiev')" }}
       >
         <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl max-w-md">
@@ -77,3 +86,4 @@ export default function App() {
     </div>
   );
 }
+
