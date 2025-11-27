@@ -1,27 +1,7 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
 
-// Компонент для отображения участника Золотой Молодежи Киева
-function MemberCard({ name, role, img, description }) {
-  return (
-    <div className="bg-gray-900 text-white rounded-xl shadow overflow-hidden hover:scale-105 transition-transform duration-300">
-      <div className="h-56 bg-gray-800 bg-center bg-cover" style={{ backgroundImage: `url(${img})` }}></div>
-      <div className="p-4 text-sm">
-        <h4 className="font-semibold mb-1">{name}</h4>
-        <p className="italic text-gray-400 mb-1">{role}</p>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
 export default function App() {
-  const members = [
-    { name: 'Алексей', role: 'Лидер', description: 'Участник проекта Золотая Молодежь Киева.', img: 'https://via.placeholder.com/400x300?text=Alexey' },
-    { name: 'Мария', role: 'Активистка', description: 'Продвигает молодежные инициативы в Киеве.', img: 'https://via.placeholder.com/400x300?text=Maria' },
-    { name: 'Игорь', role: 'Организатор', description: 'Отвечает за мероприятия и встречи.', img: 'https://via.placeholder.com/400x300?text=Igor' }
-  ];
-
   const sarcasmText = `Хозяин сайта решил наконец показать миру «Золотую Молодёжь Киева» — и это настоящее зрелище! Здесь собраны те, кто будто родился, чтобы выглядеть эффектно на фото и громко заявлять о себе в социальных сетях. Каждый участник — отдельный проект самовлюблённости: кто-то мастерски умеет делать вид, что работает над важными инициативами, а на деле — виртуозно переключается между бесконечными селфи и лайками.`;
 
   return (
@@ -52,18 +32,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* Members section */}
-      <section className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {members.map(m => (
-          <MemberCard key={m.name} {...m} />
-        ))}
-      </section>
-
       {/* Contact / Form */}
       <section id="contact" className="max-w-4xl mx-auto px-6 py-12">
         <div className="bg-gray-900 rounded-2xl shadow p-6">
           <h3 className="text-xl font-semibold flex items-center gap-3 text-white"><Mail size={18}/> Напишите нам</h3>
-          <p className="text-gray-300 mt-2">Оставьте сообщение — мы ответим и расскажем больше о проекте.</p>
+          <p className="text-gray-300 mt-2">Оставьте нам сообщение, если у вас есть информация про остальных участников, которых мы не добавили ещё.</p>
           <form className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <input className="col-span-1 md:col-span-2 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white" placeholder="Имя" />
             <input className="bg-gray-800 border border-gray-700 rounded px-3 py-2 text-white" placeholder="Email" />
