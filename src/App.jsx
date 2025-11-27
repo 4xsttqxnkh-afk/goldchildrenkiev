@@ -17,7 +17,7 @@ function MemberCard({ name, role, img, description }) {
 
 export default function App() {
   const members = [
-    { name: 'Алексей', role: 'Лидер', description: 'Участник проекта Золота Молодежь Киева.', img: 'https://via.placeholder.com/400x300?text=Alexey' },
+    { name: 'Алексей', role: 'Лидер', description: 'Участник проекта Золотая Молодежь Киева.', img: 'https://via.placeholder.com/400x300?text=Alexey' },
     { name: 'Мария', role: 'Активистка', description: 'Продвигает молодежные инициативы в Киеве.', img: 'https://via.placeholder.com/400x300?text=Maria' },
     { name: 'Игорь', role: 'Организатор', description: 'Отвечает за мероприятия и встречи.', img: 'https://via.placeholder.com/400x300?text=Igor' }
   ];
