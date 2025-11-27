@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
 
-// Компонент для отображения участника Золота Молодежь Киева
+// Компонент для отображения участника Золотой Молодежи Киева
 function MemberCard({ name, role, img, description }) {
   return (
     <div className="bg-white rounded-xl shadow overflow-hidden">
@@ -28,17 +28,17 @@ export default function App() {
       <header className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center text-white font-bold">G</div>
-          <span className="font-semibold text-lg">GoldChildrenKiev</span>
+          <span className="font-semibold text-lg">Золотая Молодежь Киева</span>
         </div>
       </header>
 
       {/* Hero */}
       <section
         className="w-full h-[70vh] bg-cover bg-center flex items-end justify-start p-10"
-        style={{ backgroundImage: "url('https://via.placeholder.com/1600x900?text=Gold+Youth+Kiev')" }}
+        style={{ backgroundImage: "url('https://via.placeholder.com/1600x900?text=Golden+Youth+Kiev')" }}
       >
         <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl max-w-md">
-          <h1 className="text-4xl font-extrabold">Gold Молодежь Киева</h1>
+          <h1 className="text-4xl font-extrabold">Золотая Молодежь Киева</h1>
           <p className="mt-3 text-gray-700 text-sm">Знакомьтесь с участниками проекта и их инициативами</p>
         </div>
       </section>
@@ -70,7 +70,7 @@ export default function App() {
       {/* Footer */}
       <footer className="mt-12 border-t py-6">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-gray-600">© {new Date().getFullYear()} Gold Молодежь Киева</div>
+          <div className="text-sm text-gray-600">© {new Date().getFullYear()} Золотая Молодежь Киева</div>
           <div className="text-sm text-gray-600">Редактируйте сайт через GitHub, изменения мгновенно отображаются онлайн</div>
         </div>
       </footer>
